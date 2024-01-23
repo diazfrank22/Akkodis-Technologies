@@ -37,11 +37,11 @@ public class FinalPriceOfProductsService implements FinalPriceOfProductsInPort {
     public Map<LocalDate, Price> applyBusinessRuleForProductPrices(FinalPriceOfProductsOutPort.Parameter inputParametersport) {
 
         return finalPriceOfProductsPort.searchFinalPriceOfProducts(inputParametersport)
-                .stream()
-                .collect(Collectors.toMap(
-                        price-> price.getStartDate().toLocalDate(),
-                        price -> price,
-                        (existente, nuevo) -> Integer.parseInt(existente.getPriority()) > Integer.parseInt(nuevo.getPriority()) ? existente : nuevo));
+                                       .stream()
+                                       .collect(Collectors.toMap(
+                                                                  price-> price.getStartDate().toLocalDate(),
+                                                                  price -> price,
+                                                                  (existente, nuevo) -> Integer.parseInt(existente.getPriority()) > Integer.parseInt(nuevo.getPriority()) ? existente : nuevo));
 
     }
 
