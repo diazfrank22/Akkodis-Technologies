@@ -10,16 +10,16 @@ contraseña: password
 
 Estructura:
 
-aplicacion 
- servicios 
-   puertos 
-     entrada 
-     salida 
-  adaptadores 
-      entrada 
-      salida 
-  dominio 
-  comunes
+aplicacion /
+ servicios /
+   puertos /
+     entrada / 
+     salida /
+  adaptadores / 
+      entrada / 
+      salida / 
+  dominio / 
+  comunes /
 
 
 
