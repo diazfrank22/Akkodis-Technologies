@@ -4,7 +4,7 @@ import com.akkodis.technologies.company.demo.domain.entities.Price;
 
 public class FinalPriceOfProductsMapper {
 
-    public static Price entityToDomain(PriceEntity priceEntity) {
+    public static Price entityToDomain(PricesEntity priceEntity) {
 
         return new Price(
                          priceEntity.getProductId()
@@ -15,9 +15,9 @@ public class FinalPriceOfProductsMapper {
                        , priceEntity.getPriority());
     }
 
-    public static PriceEntity domainToEntity(Price price) {
+    public static PricesEntity domainToEntity(Price price) {
 
-        return new PriceEntity( price.getPriceId()
+        return new PricesEntity( price.getPriceId()
                               , price.getBrandId()
                               , price.getStartDate()
                               , price.getEndDate()

@@ -3,9 +3,9 @@ package com.akkodis.technologies.company.demo.domain.entities;
 import java.time.LocalDateTime;
 
 /**
- * El dominio o core: estas entidades no deben tener ningun tipo de validaciones, anotaciones, librerias externas como lombok,
- * dado que esta capa no debe depender de factores externos por que esta capa de deberia cambiar constantemente.
- * Lo que si podria contener son reglas de negocios que estemos seguro que no van a cambiar a corto plazo
+ * El dominio o core: estas entidades no deben tener ningun tipo de validaciones, anotaciones, librerias externas
+ * como lombok, por que esta capa no debe depender de factores externos. Lo que si podria contener son reglas de
+ * negocios que estemos seguro que no van a cambiar a corto plazo.
  */
 public class Price {
 

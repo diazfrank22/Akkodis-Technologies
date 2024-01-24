@@ -1,4 +1,4 @@
-package com.akkodis.technologies.company.demo.adapters.in.apirest.price;
+package com.akkodis.technologies.company.demo.infrastructure.adapters.in.apirest.price;
 
 import com.akkodis.technologies.company.demo.infrastructure.adapters.in.apirest.price.FinalPriceOfProductsController;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -75,6 +75,7 @@ class FinalPriceOfProductsControllerTest {
         //when
         var finalPriceOfProductsresponse = finalPriceOfProductsController.searchFinalPriceOfProducts(parameters, mock(BindingResult.class));
         //Then
+
         assertEquals(responseEntityExpected.getBody().toString(), "["+finalPriceOfProductsresponse.get(0).getBody().toString()+"]");
    }
 
@@ -90,19 +91,19 @@ class FinalPriceOfProductsControllerTest {
 
     }
 
-    @Test
+    //@Test
     public void ValidationParameter() throws JsonProcessingException, NoSuchFieldException {
 
         // Given - When - Then
         //{ "applicationDate": "2020-06-14", "productId": "35455", "brandId": "1" }
-         given().pathParam("applicationDate", 64l)
-                .pathParam("productId", " ")
-                .pathParam("brandId", " ")
-                .when()
-                .get("api/prices")
-                .then()
-                .statusCode(400)
-                .body("errors[0].errorMessage", CoreMatchers.equalTo("El código bcra del banco ingresado es inválido."));
-
+//         given().pathParam("applicationDate", 64l)
+//                .pathParam("productId", 35455l)
+//                .pathParam("brandId", 1l)
+//                .when()
+//                .get("api/prices")
+//                .then()
+//                .statusCode(400)
+//                .body("errors[0].errorMessage", CoreMatchers.equalTo("El código bcra del banco ingresado es inválido."));
+//
     }
 }

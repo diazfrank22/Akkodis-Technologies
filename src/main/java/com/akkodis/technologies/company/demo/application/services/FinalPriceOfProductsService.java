@@ -27,22 +27,10 @@ public class FinalPriceOfProductsService implements FinalPriceOfProductsInPort {
 
         FinalPriceOfProductsOutPort.Parameter inputParametersport = new FinalPriceOfProductsOutPort.Parameter(LocalDate.parse(inputParameters.getApplicationDate()), inputParameters.getBrandId(), inputParameters.getProductId());
 
-        return applyBusinessRuleForProductPrices(inputParametersport).entrySet()
-                        .stream()
-                        .map(entry -> new PriceDto(entry.getValue()))
-                        .collect(Collectors.toList());
-    }
-
-    //PRIORITY: Desambiguador de aplicación de precios. Si dos tarifas coinciden en un rango de fechas se aplica la de mayor prioridad (mayor valor numérico).
-    public Map<LocalDate, Price> applyBusinessRuleForProductPrices(FinalPriceOfProductsOutPort.Parameter inputParametersport) {
-
         return finalPriceOfProductsPort.searchFinalPriceOfProducts(inputParametersport)
                                        .stream()
-                                       .collect(Collectors.toMap(
-                                                                  price-> price.getStartDate().toLocalDate(),
-                                                                  price -> price,
-                                                                  (existente, nuevo) -> Integer.parseInt(existente.getPriority()) > Integer.parseInt(nuevo.getPriority()) ? existente : nuevo));
-
+                                       .map(entry -> new PriceDto(entry))
+                                       .collect(Collectors.toList());
     }
 
 }

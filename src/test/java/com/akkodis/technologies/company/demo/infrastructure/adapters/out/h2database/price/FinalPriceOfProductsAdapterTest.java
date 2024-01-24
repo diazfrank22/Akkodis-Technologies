@@ -1,9 +1,5 @@
-package com.akkodis.technologies.company.demo.adapters.out.h2database.price;
+package com.akkodis.technologies.company.demo.infrastructure.adapters.out.h2database.price;
 
-import com.akkodis.technologies.company.demo.infrastructure.adapters.out.h2database.price.FinalPriceOfProductsAdapter;
-import com.akkodis.technologies.company.demo.infrastructure.adapters.out.h2database.price.FinalPriceOfProductsMapper;
-import com.akkodis.technologies.company.demo.infrastructure.adapters.out.h2database.price.FinalPriceOfProductsRepository;
-import com.akkodis.technologies.company.demo.infrastructure.adapters.out.h2database.price.PriceEntity;
 import com.akkodis.technologies.company.demo.application.ports.out.FinalPriceOfProductsOutPort;
 import com.akkodis.technologies.company.demo.domain.entities.Price;
 import org.junit.jupiter.api.Test;
@@ -44,9 +40,9 @@ public class FinalPriceOfProductsAdapterTest {
         //out port parameters
         var parametersOutPort = new FinalPriceOfProductsOutPort.Parameter(LocalDate.parse("2020-06-14"), 35455l, 2l);
 
-        var priceEntity = new PriceEntity(8l, 1L, LocalDateTime.parse("2020-08-20T15:00:00", DateTimeFormatter.ISO_DATE_TIME), LocalDateTime.parse("2020-06-14T18:30:00", DateTimeFormatter.ISO_DATE_TIME), 2L, 35455L, "0", 25.45, "EUR");
+        var priceEntity = new PricesEntity(8l, 1L, LocalDateTime.parse("2020-08-20T15:00:00", DateTimeFormatter.ISO_DATE_TIME), LocalDateTime.parse("2020-06-14T18:30:00", DateTimeFormatter.ISO_DATE_TIME), 2L, 35455L, "0", 25.45, "EUR");
 
-        List<PriceEntity> pricesEntityList = new ArrayList<>();
+        List<PricesEntity> pricesEntityList = new ArrayList<>();
 
         pricesEntityList.add(priceEntity);
 

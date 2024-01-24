@@ -4,7 +4,6 @@ import com.akkodis.technologies.company.demo.domain.entities.Price;
 import lombok.*;
 import java.time.LocalDateTime;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

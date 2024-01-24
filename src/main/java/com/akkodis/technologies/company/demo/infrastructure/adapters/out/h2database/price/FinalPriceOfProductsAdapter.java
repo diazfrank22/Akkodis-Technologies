@@ -23,15 +23,19 @@ public class FinalPriceOfProductsAdapter implements FinalPriceOfProductsOutPort 
     @Override
     public List<Price> searchFinalPriceOfProducts(Parameter inputParameter) {
 
-        Optional<List<PriceEntity>> result = finalPriceOfProductsRepository.findFinalPriceByProductIdAndBrandIdAndAppDate(inputParameter.getBrandId(),
-                                                                                                                          inputParameter.getProductId(),
-                                                                                                                         inputParameter.getApplicationDate());
 
-        result.ifPresentOrElse(value -> System.out.println("successful search: " + value),
-                                  () -> System.out.println("No results found."));
+        Optional<List<PricesEntity>> result = finalPriceOfProductsRepository.findFinalPriceByProductIdAndBrandIdAndAppDate(inputParameter.getBrandId(),
+                inputParameter.getProductId(),
+                inputParameter.getApplicationDate());
 
-        return result.get().stream()
-                .map(FinalPriceOfProductsMapper::entityToDomain)
-                .collect(Collectors.toList());
+        
+        //Mapeo el resultado de un entidad JPA a una entidad dominio
+        return finalPriceOfProductsRepository.findFinalPriceByProductIdAndBrandIdAndAppDate(inputParameter.getBrandId(),
+                                                                                            inputParameter.getProductId(),
+                                                                                            inputParameter.getApplicationDate())
+                                             .get()
+                                             .stream()
+                                             .map(FinalPriceOfProductsMapper::entityToDomain)
+                                             .collect(Collectors.toList());
     }
 }

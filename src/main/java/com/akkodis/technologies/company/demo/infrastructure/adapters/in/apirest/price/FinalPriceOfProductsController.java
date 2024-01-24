@@ -23,7 +23,6 @@ public class FinalPriceOfProductsController {
     @Autowired
     private final FinalPriceOfProductsInPort finalPriceOfProductsPort;
 
-
     public FinalPriceOfProductsController(FinalPriceOfProductsInPort finalPriceOfProductsPort) {
         this.finalPriceOfProductsPort = finalPriceOfProductsPort;
     }
@@ -41,8 +40,8 @@ public class FinalPriceOfProductsController {
             bindingResultValidation.getFieldErrors().forEach(error ->errores.put(error.getField (),error.getDefaultMessage()));
             return Collections.singletonList(new ResponseEntity<>(errores, HttpStatus.BAD_REQUEST));
         }
-        //response validation
 
+        //response validation
         if (!finalProductPriceResponse.isPresent()) {
             return Collections.singletonList(new ResponseEntity<>(finalProductPriceResponse, HttpStatus.NOT_FOUND));
         }
@@ -55,4 +54,3 @@ public class FinalPriceOfProductsController {
 
     }
 }
-

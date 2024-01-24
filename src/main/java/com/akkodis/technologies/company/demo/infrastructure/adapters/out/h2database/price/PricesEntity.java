@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @ToString
 @Entity
 @Table(name="prices")
-public class PriceEntity {
+public class PricesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "price_id")
@@ -34,8 +34,6 @@ public class PriceEntity {
     private Double price;
     @Column(name = "currency")
     private String currency;
-
-
 }
 
 

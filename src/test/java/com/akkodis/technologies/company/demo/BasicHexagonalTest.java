@@ -9,7 +9,7 @@ public class BasicHexagonalTest {
 
     @Test
     void basicTest() {
-        final var hexagon = new ClassFileImporter().importPackages("com.zara");
+        final var hexagon = new ClassFileImporter().importPackages("com.akkodis.technologies");
         layeredArchitecture()
                 // Se definen las capas basicas del hexagono.
                 .layer("Domain").definedBy("..domain..")
