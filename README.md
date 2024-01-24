@@ -1,6 +1,6 @@
 Arquitectura Hexagonal o de puertos y adaptadores
 
-Utilizo como IDE de desarrollo IntelliJ IDEA 2022.3.2
+Use como IDE de desarrollo IntelliJ IDEA 2022.3.2
 
 Datos de entrada del servicio (En mi caso use PostMan): { "applicationDate": "2020-06-14", "productId": "35455", "brandId": "1" }
 
