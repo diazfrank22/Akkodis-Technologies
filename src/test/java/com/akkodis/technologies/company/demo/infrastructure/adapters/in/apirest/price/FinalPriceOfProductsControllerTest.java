@@ -92,7 +92,7 @@ class FinalPriceOfProductsControllerTest {
     }
 
     //@Test
-    public void ValidationParameter() throws JsonProcessingException, NoSuchFieldException {
+   // public void ValidationParameter() throws JsonProcessingException, NoSuchFieldException {
 
         // Given - When - Then
         //{ "applicationDate": "2020-06-14", "productId": "35455", "brandId": "1" }
@@ -105,5 +105,5 @@ class FinalPriceOfProductsControllerTest {
 //                .statusCode(400)
 //                .body("errors[0].errorMessage", CoreMatchers.equalTo("El código bcra del banco ingresado es inválido."));
 //
-    }
+  //  }
 }
